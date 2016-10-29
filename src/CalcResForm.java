@@ -7,10 +7,6 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author ivan
- */
 public class CalcResForm extends javax.swing.JFrame {
     
     public CalcResForm(){

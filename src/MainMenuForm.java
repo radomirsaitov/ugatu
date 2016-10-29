@@ -162,6 +162,8 @@ public class MainMenuForm extends javax.swing.JFrame{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        this.hide();
+       CalculationFuseForm form = new CalculationFuseForm();
+       form.setVisible(true);
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         

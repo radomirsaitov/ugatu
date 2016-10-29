@@ -152,7 +152,78 @@ public class CalcResForm extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-      
+       try
+       {
+        int index_1=0;
+        int index_2=0;
+        int index_3=0;
+        int index_4=0;
+        double res_1=0;
+        double res_2=0;
+        double res_3=0;
+        double res_4=0;
+        double res_out=0;
+        
+        index_1=jComboBox1.getSelectedIndex();
+        index_2=jComboBox2.getSelectedIndex();
+        index_3=jComboBox3.getSelectedIndex();
+        index_4=jComboBox4.getSelectedIndex();
+        
+        if(index_1==0) res_1=0;
+        else if (index_1==1) res_1=10000;
+        else if (index_1==2) res_1=20000;
+        else if (index_1==3) res_1=30000;
+        else if (index_1==4) res_1=40000;
+        else if (index_1==5) res_1=50000;
+        else if (index_1==6) res_1=60000;
+        else if (index_1==7) res_1=70000;
+        else if (index_1==8) res_1=80000;
+        else if (index_1==9) res_1=90000;
+        
+        if(index_2==0) res_2=0;
+        else if (index_2==1) res_2=1000;
+        else if (index_2==2) res_2=2000;
+        else if (index_2==3) res_2=3000;
+        else if (index_2==4) res_2=4000;
+        else if (index_2==5) res_2=5000;
+        else if (index_2==6) res_2=6000;
+        else if (index_2==7) res_2=7000;
+        else if (index_2==8) res_2=8000;
+        else if (index_2==9) res_2=9000;
+        
+        if(index_3==0) res_3=0;
+        else if (index_3==1) res_3=100;
+        else if (index_3==2) res_3=200;
+        else if (index_3==3) res_3=300;
+        else if (index_3==4) res_3=400;
+        else if (index_3==5) res_3=500;
+        else if (index_3==6) res_3=600;
+        else if (index_3==7) res_3=700;
+        else if (index_3==8) res_3=800;
+        else if (index_3==9) res_3=900;
+        
+        if(index_4==0) res_1=1;
+        else if (index_4==1) res_4=10;
+        else if (index_4==2) res_4=100;
+        else if (index_4==3) res_4=1000;
+        else if (index_4==4) res_4=10000;
+        else if (index_4==5) res_4=100000;
+        else if (index_4==6) res_4=1000000;
+        else if (index_4==7) res_4=10000000;
+        
+        res_out = (res_1+res_2+res_3)*res_4;
+        if (res_out<1000) 
+             jTextField1.setText(String.valueOf(res_out)+"[ом]");
+         else if ( res_out < 1000000 ) { 
+             jTextField1.setText(String.valueOf(res_out/1000)+"[КОм]}"); 
+         } else  
+             jTextField1.setText(String.valueOf(res_out/1000000)+"[МОм]"); 
+       }
+       catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Проверьте правильность ввода параметров");
+        }
+
+        
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         

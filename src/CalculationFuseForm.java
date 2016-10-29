@@ -297,7 +297,68 @@ public class CalculationFuseForm extends javax.swing.JFrame {
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-  
+    //метод расчета плавкой вставки предохранителя(жучок)
+        try
+        {
+        int si; // переменная для индекса массива таблицы материала
+        double d=Double.parseDouble(jTextField3.getText());
+        double I=0;
+         double i=Double.parseDouble(jTextField4.getText());
+        
+           Double[] k =new Double[6];
+        k[0]=1.0;
+        k[1]=0.127;
+        k[2] = 0.07;
+        k[3] = 0.034;
+        k[4] = 0.06;
+        k[5] = 1.0;
+
+        Double[] m = new Double[6];
+        m[0] = 59.2;
+        m[1] = 24.6;
+        m[2] = 1.0;
+        m[3] = 80.0;
+        m[4] = 40.8;
+        m[5] = 12.8;
+        
+        si=jComboBox1.getSelectedIndex();
+        
+        if (d<=0.2) 
+        {
+             if (d>=0.02) 
+             {
+                I=(d-0.005)/k[si];
+             }
+            else 
+             {
+                jTextField3.setText("Слишком маленький диаметр");
+             }
+        }
+        else {
+            I=m[si]*Math.sqrt(Math.pow(d, 3));
+        }
+        I=Math.round(I*10)/10;
+        jLabel14.setText(String.valueOf(I)+"[А]");
+
+      
+      if (i<5) 
+      {
+        d=i*k[si]+0.005;
+      }
+      else 
+      {
+        d=Math.pow((i*i)/(m[si]*m[si]), 1/3);
+      }
+      d = Math.round(d*100)/100;
+      jLabel15.setText(String.valueOf(d)+"[мм]");
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Проверьте правильность ввода параметров");
+        }
+
+
+
+        
 
         
     }                                        

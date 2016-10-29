@@ -142,6 +142,8 @@ public class StartForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {    
         //main menu form
+        MainMenuForm frm=new MainMenuForm();
+        frm.setVisible(true);
     }   
     
         // Variables declaration - do not modify                     

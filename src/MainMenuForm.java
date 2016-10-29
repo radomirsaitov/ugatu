@@ -166,6 +166,8 @@ public class MainMenuForm extends javax.swing.JFrame{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.hide();
+        ColorCodingResistorForm form = new ColorCodingResistorForm();
+        form.setVisible(true);
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         

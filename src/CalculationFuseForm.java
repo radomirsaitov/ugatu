@@ -293,6 +293,25 @@ public class CalculationFuseForm extends javax.swing.JFrame {
     
      private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
+        // Метод для  расчета макс. тока нагрузки для предохранителя электрических цепей.
+        try {
+
+            double P,U,I;
+
+            P=Float.parseFloat(jTextField1.getText());
+            U=Float.parseFloat(jTextField2.getText());
+
+            if(U>0 && P>0)
+            {
+                I=Math.floor(U/P);
+                jLabel8.setText(String.valueOf(I)+"[А]");
+            }
+            else JOptionPane.showMessageDialog(null, "Значения параметров должны быть положительными и больше 0");
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Проверьте правильность ввода параметров");
+        }
+
 
     }                                        
 

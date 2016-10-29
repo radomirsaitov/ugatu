@@ -287,7 +287,28 @@ public class ColorCodingResistorForm extends javax.swing.JFrame {
     }                                           
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-
+        try
+        {
+        double R1scale = Math.pow(10, 3*(jComboBox1.getSelectedIndex()));
+        double R2scale = Math.pow(10, 3*(jComboBox2.getSelectedIndex()));
+        double U1scale = Math.pow(10, 3*(jComboBox3.getSelectedIndex()));
+        double Ascale = Math.pow(10, 3*(jComboBox4.getSelectedIndex()));
+                    
+        double R1=Double.parseDouble(jTextField2.getText());
+        double R2=Double.parseDouble(jTextField3.getText());
+        double U2=Double.parseDouble(jTextField1.getText());
+        
+        double r1=R1*R1scale;
+        double r2 = R2*R2scale;
+        
+        double U1 = U2 * r2/(r1 + r2);
+         jTextField4.setText(String.valueOf(U1*U1scale));  
+         jTextField5.setText(String.valueOf(U2/(r1+r2)*Ascale));
+        }
+        
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Проверьте правильность ввода параметров");
+        }
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         

@@ -175,7 +175,8 @@ public class MainMenuForm extends javax.swing.JFrame{
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        this.hide();
-        
+       CalculationResistorsForm resistorForm = new CalculationResistorsForm();
+       resistorForm.setVisible(true);
     }                                        
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         

@@ -170,7 +170,8 @@ public class MainMenuForm extends javax.swing.JFrame{
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        this.hide();
-       
+       CalcResForm form = new CalcResForm();
+       form.setVisible(true);
     }                                        
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
